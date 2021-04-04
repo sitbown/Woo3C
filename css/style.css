@@ -2,6 +2,10 @@ body {
   background-color: #f6f6f6;
   font-family: Noto sans TC, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Arial, Helvetica, sans-serif;
 }
+*{
+  padding: 0;
+  margin: 0;
+}
 h2{
   color: #484848;
   font-weight: 500;
@@ -13,15 +17,20 @@ p{
 li{
   line-height: 1.5;
 }
-div{
-  border-color: #000000;
-  border-width: 1px;
-}
 a{
   text-decoration: none;
 }
 .login a, .cart a{
   color: #818181;
+}
+.cart a{
+  display: block;
+  display: flex;
+  box-sizing: border-box;
+  
+}
+.cart{
+  align-items: center;
 }
 .login{
   color: #818181;
@@ -42,6 +51,7 @@ a{
   margin: auto;
 }
 .header{
+  padding: 10px 0;
   box-shadow: 0px 5px 5px 0px #77adff40;
 }
 
@@ -57,23 +67,28 @@ nav {
   margin-top: 0;
   margin-bottom: 0;
   margin: auto;
-  
 }
-
 .nav-logo a{
   display: block;
-  
 }
-
 .nav-left {
   display: flex;
 }
-
-.nav-right li{
-  display: inline-block;
-  align-items: center;
-  padding: 0 15px;
+.nav-right{
+  display: flex;
 }
+.nav-right ul{
+  display: flex;
+}
+.nav-right li{
+  align-items: center;
+  display: flex;
+  /* padding: 0 16px; */
+}
+.search, .cart, .login{
+  margin-right: 26px;
+}
+
 .search{
   background-color: #F3F3F3;
   color: #B5B5B5;
@@ -149,11 +164,12 @@ nav {
   margin: 15px;
   border-radius: 16px;
   box-shadow: 0px 5px 5px 0px #77adff40;
+  overflow: hidden;
 }
 
 .promo img{
   width: 100%;
-  border-radius: 16px;
+  
 }
 
 .pd-row{
@@ -198,14 +214,18 @@ section{
 }
 .pd-item-g-l{
   margin: 10px;
+  /* border-radius: 16px; */
+}
+.pd-item-l{
   border-radius: 16px;
+  box-shadow: 0px 5px 5px #77adff40;
+  width: 460px;
+  overflow: hidden;
 }
 .pd-item-l img{
-  max-width: 460px;
-  border-radius: 16px;
-  box-shadow: 0px 5px 5px #77adff40;;
+  width: 100%;
+  /* border-radius: 16px; */
 }
-
 .pd-item-g-r{
   display: flex;
   flex-wrap: wrap;
@@ -218,11 +238,11 @@ section{
   margin: 10px;
   /* box-sizing: border-box; */
   border-radius: 16px;
+  overflow: hidden;
   box-shadow: 0px 5px 5px #77adff40;;
 }
 .pd-item-r img{
   width: 100%;
-  border-radius: 16px;
 }
 .p-15{
   padding: 15px;
@@ -250,7 +270,7 @@ section{
 }
 .pd-tab{
   border-radius: 20px;
-  padding: 10px 22px;
+  padding: 16px 20px;
   font-size: 14px;
   border-color: white;
   border-style: solid;
@@ -259,11 +279,11 @@ section{
 }
 .pd-tab-d{
   border-radius: 20px;
-  padding: 8px 22px;
+  padding: 16px 20px;
   font-size: 14px;
-  /* border-color: white;
-  border-style: solid; */
-  border-width: 2px;
+  border-color: rgba(255, 255, 255, 0);
+  border-style: solid;
+  border-width: 1px;
   margin: 5px 20px;
   opacity: 50%;
 }
@@ -272,13 +292,14 @@ section{
   flex-wrap: wrap;
 }
 .pd-tab-item{
-  max-width: 220px;
-  padding: 10px;
+  max-width: 210px;
+  background-color: white;
+  margin: 15px;
   border-radius: 16px;
+  overflow: hidden;
 }
 .pd-tab-item img{
   width: 100%;
-  border-radius: 16px;
 }
 
 /* .pd-tab-item img{
@@ -301,8 +322,8 @@ section{
 .pd-video-item img{
   width: 100%;
 }
-.m-60{
-  margin-top: 120px;
+.mt-90{
+  margin-top: 90px;
   
 }
 footer {
@@ -324,6 +345,9 @@ footer li{
 .pt-60{
   padding-top: 60px;
 }
+.ptb-20{
+  padding: 20px;
+}
 .info-logo{
   width: 30%;
   font-size: 12px;
@@ -339,10 +363,12 @@ footer li{
   width: 20%;
   padding: 10px;
 }
-
+.info ul{
+  padding-bottom: 10px;
+}
 .p-title{
   padding: 0 0 6px 0;
-  margin: 0px;
+  margin: 0 0 10px 0;
   border-bottom-style:solid; 
   border-color: #ffffffb6;
   border-width: 1px;
@@ -350,28 +376,37 @@ footer li{
 
 li{
   list-style: none;
-  padding-bottom: 6px;
-
+  /* padding-bottom: 6px; */
 }
 
 ul{
   padding-left: 0px;
+  color: #3DA1FF;
+}
+ul a{
+  color: #ffffffb6;
+}
+
+ul a:hover{
+  color: #ffffff;
 }
 .copyright{
   border-top-style:solid; 
   border-color: #3DA1FF;
   justify-content: space-between;
   display: flex;
+  border-width: 1px;
 }
 .copyright p{
   font-size: 12px;
   color: #3DA1FF;
+  
 }
 .ecpay{
   width: 60px;
   height: 20px;
-  margin-top: 10px;
-  align-items: center;
+  display: flex;
+  padding: 10px 0;
 }
 .ecpay img{
   width: 100%;  
@@ -382,13 +417,22 @@ ul{
 
 }
 .fb-page{
-  margin-top: 16px;
+  margin-top: 10px;
 }
 
 .line{
-  margin-top: 20px;
+  /* margin-top: 10px; */
   max-width: 160px;
+  padding-top: 10px;
 }
 .line img{
   width: 100%;
+}
+.text{
+  display: flex;
+}
+.text p{
+  align-items: center;
+  margin: auto;
+  padding: 10px 0;
 }
