@@ -281,15 +281,22 @@ section{
   border-radius: 16px;
 }
 
+/* .pd-tab-item img{
+  width: 100%;
+  border-radius: 16px;
+} */
+
 .pd-video-item-g{
   display: flex;
 }
 .pd-video-item{
-  max-width: 370px;
+  height: 100%;
   margin: 15px;
+  background-color: #00EBE3;
   border-radius: 16px;
   box-sizing: border-box;
   overflow: hidden;
+  box-shadow: 0px 5px 5px #77adff40;
 }
 .pd-video-item img{
   width: 100%;
@@ -325,7 +332,9 @@ footer li{
   width: 120px;
   margin-bottom: 15px;
 }
-
+.info-logo li{
+  opacity: 80%;
+}
 .info{
   width: 20%;
   padding: 10px;
@@ -378,4 +387,8 @@ ul{
 
 .line{
   margin-top: 20px;
+  max-width: 160px;
+}
+.line img{
+  width: 100%;
 }
